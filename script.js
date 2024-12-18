@@ -9,11 +9,26 @@ let path = [];
 let currentScore = 0;
 let highScore = 0;
 
-
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mouseleave", stopDrawing);
+
+// Touch event listeners
+canvas.addEventListener("touchstart", startDrawingTouch, { passive: true });
+canvas.addEventListener("touchmove", drawTouch, { passive: true });
+canvas.addEventListener("touchend", stopDrawing);
+
+// Functions for touch events
+function startDrawingTouch(e) {
+    const touch = e.touches[0];
+    startDrawing({ clientX: touch.clientX, clientY: touch.clientY });
+}
+
+function drawTouch(e) {
+    const touch = e.touches[0];
+    draw({ clientX: touch.clientX, clientY: touch.clientY });
+}
 
 function startDrawing(e) {
     drawing = true;
@@ -49,7 +64,7 @@ function stopDrawing() {
 function getMousePos(e) {
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;   
-    const scaleY = canvas.height / rect.height;
+    const scaleY = canvas.height / rect.height; 
     
     return {
         x: (e.clientX - rect.left) * scaleX,
@@ -115,7 +130,6 @@ function drawCenterPoint() {
     ctx.fill();
 }
 
-
 function showCelebration() {
     const celebrationDiv = document.getElementById("celebration");
     celebrationDiv.style.display = "block"; 
@@ -124,8 +138,8 @@ function showCelebration() {
     }, 1500); 
 }
 
-
 drawCenterPoint();
+
 
 
 
