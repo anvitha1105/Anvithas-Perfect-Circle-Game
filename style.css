@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2.5rem;
+    color: #ff69b4; 
+    font-family: 'Sacramento', cursive; 
+    text-shadow: 0 0 8px #ff69b4, 0 0 16px #ff69b4;
+    z-index: 10; 
+}
+
+.game-title {
+    margin-top: 20px; 
+}
+
+h1 {
+    font-size: 3rem;
+    color: #FF4500; 
+    text-shadow: 0 0 8px #FF4500, 0 0 16px #FF4500;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 10px; 
+}
+
+#canvas-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+canvas {
+    background-color: black;
+    border: 2px solid #fcfffd;
+    position: relative;
+    max-width: 100%;
+    height: 320px;
+    display: block;
+    cursor: default; 
+}
+
+.best-score {
+    font-size: 1.8rem;
+    color: #FFCC00; 
+    text-shadow: 0 0 10px #FFCC00, 0 0 20px #FFCC00;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.score-container, .comments-container {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.score, .high-score, .comments {
+    font-size: 1.5rem;
+    color: #FFCC00; 
+    text-shadow: 0 0 10px #FFCC00, 0 0 20px #FFCC00;
+    margin: 5px 0;
+}
+
+.comments {
+    color: #cd3232; 
+    text-shadow: 0 0 8px hsl(0, 61%, 50%), 0 0 16px hsl(0, 61%, 50%);
+    font-size: 1.6rem; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+}
+
+.score-container {
+    margin-top: 6px; 
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .score, .high-score, .comments {
+        font-size: 1.2rem;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .header, .game-title, .score-container, .comments-container {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-height: 900px) {
+    body {
+        padding: 5px;
+    }
+
+    .header {
+        top: 10px;
+        left: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    canvas {
+        width: 100%;
+        height: 320px;
+    }
+
+    .score-container {
+        margin-top: 10px;
+    }
+}
+
+.score-container, .comments-container {
+    margin-top: 5px; 
+}
+
+.comments-container {
+    margin-top: 5px; 
+}
+
+canvas {
+    height: 320px; 
+    max-width: 100%;
+}
+
+.score-container {
+    margin-bottom: 5px;
+}
+
+.comments-container {
+    margin-bottom: 5px;
+}
+
+/* Celebration pop-up styles */
+#celebration {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: cursive ;
+    font-size: 2rem;
+    color: #ff004c;
+    text-shadow: 0 0 20px #FF4500, 0 0 40px #FF4500;
+    z-index: 1000;
+    animation: pop-in-out 1.5s ease-in-out forwards;
+    display: none;
+}
+
+@keyframes pop-in-out {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translate(-50%, -50%);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) translate(-50%, -50%);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1) translate(-50%, -50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
