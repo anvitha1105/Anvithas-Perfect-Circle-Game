@@ -9,7 +9,7 @@ let path = [];
 let currentScore = 0;
 let highScore = 0;
 
-// Mouse event listeners
+
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
@@ -48,8 +48,8 @@ function stopDrawing() {
 
 function getMousePos(e) {
     const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;   // Adjust for horizontal scaling
-    const scaleY = canvas.height / rect.height; // Adjust for vertical scaling
+    const scaleX = canvas.width / rect.width;   
+    const scaleY = canvas.height / rect.height;
     
     return {
         x: (e.clientX - rect.left) * scaleX,
@@ -69,7 +69,7 @@ function calculateFinalScore() {
     if (currentScore > highScore) {
         highScore = currentScore;
         highScoreDisplay.textContent = `Best Score: ${highScore}%`;
-        showCelebration(); // Trigger celebration
+        showCelebration(); 
     }
 
     displayComment(currentScore);
@@ -115,16 +115,16 @@ function drawCenterPoint() {
     ctx.fill();
 }
 
-// Celebration pop-up function
+
 function showCelebration() {
     const celebrationDiv = document.getElementById("celebration");
-    celebrationDiv.style.display = "block"; // Show the celebration div
+    celebrationDiv.style.display = "block"; 
     setTimeout(() => {
-        celebrationDiv.style.display = "none"; // Hide the div after animation
-    }, 1500); // Match the animation duration
+        celebrationDiv.style.display = "none"; 
+    }, 1500); 
 }
 
-// Initialize with the center point
+
 drawCenterPoint();
 
 
