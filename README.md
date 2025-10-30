@@ -34,8 +34,7 @@ Your score is calculated based on how consistent your circle's radius is from th
 
 ## 🚀 Running the Game
 
-### On Replit
-Just click the "Run" button and the game will open in the preview window!
+
 
 ### Locally
 1. Clone this repository
